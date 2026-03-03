@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multi-Tier App</title>
+</head>
+<body>
+  <h2>Frontend Application</h2>
+  <div id="backend-data"></div>
+
+  <script>
+    fetch('/api')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('backend-data').innerHTML = data;
+      })
+      .catch(err => console.log(err));
+  </script>
+</body>
+</html>
